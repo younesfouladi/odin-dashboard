@@ -1,0 +1,351 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ************************************************** */
+@font-face {
+  font-family: "robot-normal";
+  src: url(./assets/fonts/Roboto-VariableFont_wdth\wght.ttf);
+}
+@font-face {
+  font-family: "roboto-italic";
+  src: url(./assets/fonts/Roboto-Italic-VariableFont_wdth\wght.ttf);
+}
+
+:root,
+:root.light-mode {
+  --font-size: 10px;
+  --main-font: "roboto-normal";
+  --italic-font: "roboto-italic";
+  --bg-color: #fafafa;
+  --sidebar-bg: #f5f5f5;
+  --sidebar-color: #6d6d6d;
+  --active-item-sidebar: #e9e9e9;
+  --card-bg: #ffffff;
+  --color-main: #141414;
+  --color-gray: #6d6d6d;
+  --blue: #4a63fd;
+  --blue-bg: #eaebff;
+  --red: #f26166;
+  --red-bg: #feeaeb;
+  --purple: #7f6aeb;
+  --purple-bg: #ebe8fb;
+  --green: #4cbc40;
+  --green-bg: #e8f4e8;
+
+  /* Switch Theme Button */
+  .theme-switch .switch-theme-btn {
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    background-color: var(--active-item-sidebar);
+    display: flex;
+    padding: 0.2rem;
+    position: absolute;
+    right: 0;
+  }
+
+  .theme-switch .switch-theme-btn > * {
+    width: 45%;
+    height: 100%;
+    background-color: var(--sidebar-color);
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+:root.dark-mode {
+  --bg-color: #151520;
+  --sidebar-bg: #1e1e2c;
+  --sidebar-color: #ffffffe1;
+  --active-item-sidebar: #232c44;
+  --card-bg: #1e1e2c;
+  --color-main: #fff;
+  --color-gray: #6d6d6d;
+  --blue: #4a63fd;
+  --blue-bg: #eaebff;
+  --red: #f26166;
+  --red-bg: #feeaeb;
+  --purple: #7f6aeb;
+  --purple-bg: #ebe8fb;
+  --green: #4cbc40;
+  --green-bg: #e8f4e8;
+
+  .theme-switch .switch-theme-btn {
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    background-color: var(--active-item-sidebar);
+    display: flex;
+    padding: 0.2rem;
+    position: absolute;
+    right: 0;
+  }
+
+  .theme-switch .switch-theme-btn > * {
+    width: 45%;
+    height: 100%;
+    background-color: var(--blue);
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--main-font), sans-serif;
+}
+
+.container {
+  width: inherit;
+  height: inherit;
+  display: grid;
+  grid-template-columns: minmax(300px, 350px) 1fr;
+  grid-template-rows: 10% 90%;
+  grid-row: 1fr;
+  background-color: var(--bg-color);
+}
+
+.card {
+  border: 1px solid var(--active-item-sidebar);
+  color: var(--color-main);
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+}
+
+/************************* SIDEBAR ******************************/
+
+.sidebar-conatiner {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sidebar-bg);
+  grid-row: 1 / -1;
+  padding: 2rem;
+  color: var(--color-main);
+  border-right: 1px solid var(--active-item-sidebar);
+  gap: 1rem;
+}
+
+.sidebar-conatiner .logo-section {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar-conatiner .logo-section i {
+  font-size: 1.7rem;
+}
+
+.sidebar-conatiner ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-conatiner ul li {
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.sidebar-conatiner ul li:hover {
+  background-color: var(--active-item-sidebar);
+}
+
+.sidebar-conatiner ul li a {
+  text-decoration: none;
+  color: var(--sidebar-color);
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-conatiner div + * {
+  color: var(--sidebar-color);
+}
+
+.sidebar-conatiner .side-item {
+  display: flex;
+  gap: 0.5rem;
+  /* padding: 0.5rem 1rem; */
+  padding: 0.5rem 0rem 0.5rem 0.5rem;
+}
+
+.sidebar-conatiner .active-item {
+  background-color: var(--active-item-sidebar);
+}
+
+.sidebar-conatiner .upgrade-account {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--active-item-sidebar);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  color: var(--color-main);
+}
+
+.sidebar-conatiner .upgrade-account h4 span {
+  background-color: var(--blue);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.upgrade-account p {
+  font-size: 1rem;
+}
+
+.upgrade-account button.upgrade-now-btn {
+  border: none;
+  background-color: var(--blue);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.upgrade-account button.upgrade-now-btn:hover {
+  opacity: 0.8;
+}
+
+.theme-switch {
+  position: relative;
+}
+
+.user-picture {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+/************************* NAVBAR ******************************/
+.container .navbar-container {
+  display: flex;
+  grid-column: 2 / -1;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+.navbar-container div.current-user {
+  margin-right: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar-container .notification {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-container .search-box {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.2rem 0.5rem 1rem;
+  height: 3rem;
+}
+
+.navbar-container .search-box input,
+.navbar-container .search-box input:focus {
+  border: none;
+  outline: none;
+  background-color: var(--card-bg);
+  color: var(--color-main);
+}
+
+.navbar-container .search-box-remove-text {
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-container .search-box-remove-text:hover {
+  background-color: var(--bg-color);
+}
+
+.navbar-container .user-settings {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
