@@ -299,7 +299,7 @@ body {
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .navbar-container .notification {
