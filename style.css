@@ -596,7 +596,7 @@ th {
   width: 3rem;
   height: 3rem;
   transition: all 0.2s ease-in-out;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: var(--bg-color);
@@ -657,6 +657,9 @@ th {
     left: 0;
   }
   .sidebar-opener-button {
+    display: flex;
+  }
+  .sidebar-closer {
     display: flex;
   }
 }
