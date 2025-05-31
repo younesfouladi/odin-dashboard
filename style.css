@@ -72,9 +72,31 @@ h6 {
   src: url(./assets/fonts/Roboto-Italic-VariableFont_wdth\wght.ttf);
 }
 
+/* ********* SCROLL BAR ************ */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--active-item-sidebar);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray);
+}
+
+/* ********************** */
+
 :root,
 :root.light-mode {
-  --font-size: 10px;
+  font-size: 14px;
   --main-font: "roboto-normal";
   --italic-font: "roboto-italic";
   --bg-color: #fafafa;
@@ -88,8 +110,8 @@ h6 {
   --blue-bg: #eaebff;
   --red: #f26166;
   --red-bg: #feeaeb;
-  --purple: #7f6aeb;
-  --purple-bg: #ebe8fb;
+  --orange: #ecc045;
+  --orange-bg: #fbf4e8;
   --green: #4cbc40;
   --green-bg: #e8f4e8;
 
@@ -120,16 +142,16 @@ h6 {
   --sidebar-color: #ffffffe1;
   --active-item-sidebar: #232c44;
   --card-bg: #1e1e2c;
-  --color-main: #fff;
+  --color-main: #e9e9e9;
   --color-gray: #9c9c9c;
-  --blue: #4a63fd;
-  --blue-bg: #eaebff;
-  --red: #f26166;
-  --red-bg: #feeaeb;
-  --purple: #7f6aeb;
-  --purple-bg: #ebe8fb;
-  --green: #4cbc40;
-  --green-bg: #e8f4e8;
+  --blue: #7083fd;
+  --blue-bg: #375e8d;
+  --red: #af4852;
+  --red-bg: #461f2b;
+  --orange: #d6ab35;
+  --orange-bg: #70552a;
+  --green: #2f9d63;
+  --green-bg: #1e3e33;
 
   .theme-switch .switch-theme-btn {
     width: 3rem;
@@ -154,16 +176,17 @@ h6 {
 html,
 body {
   width: 100%;
-  height: 100%;
   font-family: var(--main-font), sans-serif;
 }
-
+body {
+  height: 100%;
+}
 .container {
   width: inherit;
   height: inherit;
   display: grid;
-  grid-template-columns: minmax(300px, 350px) 1fr;
-  grid-template-rows: 10% 90%;
+  grid-template-columns: minmax(260px, 300px) 1fr;
+  grid-template-rows: 80px auto;
   grid-row: 1fr;
   background-color: var(--bg-color);
 }
@@ -177,7 +200,7 @@ body {
 
 /************************* SIDEBAR ******************************/
 
-.sidebar-conatiner {
+.sidebar-container {
   display: flex;
   flex-direction: column;
   background-color: var(--sidebar-bg);
@@ -188,35 +211,35 @@ body {
   gap: 1rem;
 }
 
-.sidebar-conatiner .logo-section {
+.sidebar-container .logo-section {
   display: flex;
   gap: 0.5rem;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.sidebar-conatiner .logo-section i {
+.sidebar-container .logo-section i {
   font-size: 1.7rem;
 }
 
-.sidebar-conatiner ul {
+.sidebar-container ul {
   list-style: none;
   padding-left: 0;
   margin-bottom: 1.5rem;
 }
 
-.sidebar-conatiner ul li {
+.sidebar-container ul li {
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
   position: relative;
   margin: 0.5rem 0;
 }
 
-.sidebar-conatiner ul li:hover {
+.sidebar-container ul li:hover {
   background-color: var(--active-item-sidebar);
 }
 
-.sidebar-conatiner ul li a {
+.sidebar-container ul li a {
   text-decoration: none;
   color: var(--sidebar-color);
   left: 0;
@@ -224,22 +247,22 @@ body {
   height: 100%;
 }
 
-.sidebar-conatiner div + * {
+.sidebar-container div + * {
   color: var(--sidebar-color);
 }
 
-.sidebar-conatiner .side-item {
+.sidebar-container .side-item {
   display: flex;
   gap: 0.5rem;
   /* padding: 0.5rem 1rem; */
   padding: 0.5rem 0rem 0.5rem 0.5rem;
 }
 
-.sidebar-conatiner .active-item {
+.sidebar-container .active-item {
   background-color: var(--active-item-sidebar);
 }
 
-.sidebar-conatiner .upgrade-account {
+.sidebar-container .upgrade-account {
   display: flex;
   flex-direction: column;
   background-color: var(--active-item-sidebar);
@@ -250,8 +273,8 @@ body {
   color: var(--color-main);
 }
 
-.sidebar-conatiner .upgrade-account h4 span {
-  background-color: var(--blue);
+.sidebar-container .upgrade-account h4 span {
+  background-color: #4a63fd;
   color: #fff;
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -263,7 +286,7 @@ body {
 
 .upgrade-account button.upgrade-now-btn {
   border: none;
-  background-color: var(--blue);
+  background-color: #4a63fd;
   color: #fff;
   border-radius: 0.5rem;
   padding: 0.5rem 0;
@@ -290,7 +313,7 @@ body {
   grid-column: 2 / -1;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 0 2rem;
   gap: 2rem;
 }
 
@@ -357,7 +380,7 @@ body {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 4fr 3fr;
+  grid-template-rows: 80px 500px 3fr;
   gap: 1rem;
 }
 
@@ -394,8 +417,8 @@ body {
 }
 
 .statistics-container .card:nth-child(2) i {
-  background-color: var(--purple-bg);
-  color: var(--purple);
+  background-color: var(--orange-bg);
+  color: var(--orange);
 }
 
 .statistics-container .card:nth-child(3) i {
@@ -411,10 +434,6 @@ body {
 .statistics-container h4 {
   margin-bottom: 0.3rem;
   color: var(--color-gray);
-}
-
-.statistics-container .card h3 {
-  font-family: var(--italic-font);
 }
 
 /* ******************* PROJECT SECTION ***************** */
@@ -437,7 +456,7 @@ body {
   flex-direction: column;
   gap: 1rem;
   border: 1px dashed var(--active-item-sidebar);
-  border-left: 1px dashed var(--purple);
+  border-left: 2px solid var(--active-item-sidebar);
 }
 
 .projects-container .card div {
@@ -456,6 +475,67 @@ body {
 }
 
 /* ************* announcement-container *****************8888 */
-.announcement-container {
-  grid-column: 3 / 4;
+.news-container {
+  grid-column: 4;
+  padding: 1rem;
+  overflow: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  overflow-x: none;
+}
+
+.news-container .new-news {
+  width: 100%;
+  min-height: fit-content;
+  border-bottom: 1px solid var(--active-item-sidebar);
+  padding: 0.5rem 0;
+}
+
+.news-container .new-news:last-child {
+  border-bottom: none;
+}
+
+.news-container .new-news p {
+  color: var(--color-gray);
+}
+
+/* ********** RECENT ORDER TABLE CONTAINER ******** */
+table,
+td,
+th {
+  text-align: center;
+}
+
+.recent-order-container table th {
+  border-bottom: 1px solid var(--active-item-sidebar);
+}
+.recent-order-container {
+  padding: 1rem;
+  grid-column: 1 / -1;
+}
+
+.recent-order-container th,
+.recent-order-container td {
+  padding: 1rem 2rem;
+}
+
+.order-status {
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+}
+
+.order-status.confirmed-order {
+  background-color: var(--green-bg);
+  color: var(--green);
+}
+
+.order-status.failed-order {
+  background-color: var(--red-bg);
+  color: var(--red);
+}
+
+.order-status.pending-order {
+  background-color: var(--orange-bg);
+  color: var(--orange);
 }

@@ -1,18 +1,24 @@
 const root = document.documentElement;
 const themeSwitchButton = document.querySelector(".switch-theme-btn");
 const activeThemeIndicator = document.querySelector(".toggle-theme-switch");
+// theme icon mode on switch button
+const themeModeIcon = document.querySelector(".theme-mode-icon");
 
 // تابعی برای اعمال تم (تاریک یا روشن) و به‌روزرسانی نمایشگر دکمه
 function applyTheme(isDark) {
   if (isDark) {
     root.classList.add("dark-mode");
     root.classList.remove("light-mode");
+    themeModeIcon.classList.add("bi-moon-stars");
+    themeModeIcon.classList.remove("bi-brightness-high");
     if (activeThemeIndicator) {
       activeThemeIndicator.style.transform = "translateX(1.4rem)";
     }
   } else {
     root.classList.add("light-mode");
     root.classList.remove("dark-mode");
+    themeModeIcon.classList.remove("bi-moon-stars");
+    themeModeIcon.classList.add("bi-brightness-high");
     if (activeThemeIndicator) {
       activeThemeIndicator.style.transform = "translateX(0)";
     }
