@@ -70,3 +70,17 @@ const searchBoxText = document.querySelector(".search-box-text");
 searchBoxTemoveTextBtn.addEventListener("click", () => {
   searchBoxText.value = "";
 });
+
+// SIDEBAR OPEN CLOSE BUTTON ********************
+
+const sideBar = document.querySelector(".sidebar-container");
+const sidebarCloser = document.querySelector(".sidebar-closer");
+const sidebarOpener = document.querySelector(".sidebar-opener-button");
+
+sidebarOpener.addEventListener("click", () => {
+  sideBar.style.display = "flex";
+});
+
+sidebarCloser.addEventListener("click", () => {
+  sideBar.style.display = "none";
+});

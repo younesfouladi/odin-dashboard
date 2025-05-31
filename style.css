@@ -570,6 +570,39 @@ th {
   color: var(--orange);
 }
 
+/* side bar opened btn */
+.sidebar-opener-button {
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  display: none;
+}
+
+.sidebar-opener-button:hover {
+  background-color: var(--bg-color);
+}
+
+/* sidebar closer btn ********* */
+.sidebar-closer {
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+}
+
 /* RESPONSIVE DESIGNS */
 
 @media (max-width: 1320px) {
@@ -620,6 +653,11 @@ th {
 
   .sidebar-container {
     display: none;
+    position: absolute;
+    left: 0;
+  }
+  .sidebar-opener-button {
+    display: flex;
   }
 }
 @media (max-height: 1000px) {
