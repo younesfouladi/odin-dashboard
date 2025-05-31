@@ -507,6 +507,10 @@ th {
   text-align: center;
 }
 
+.recent-order-container table {
+  width: 100%;
+}
+
 .recent-order-container table th {
   border-bottom: 1px solid var(--active-item-sidebar);
 }
