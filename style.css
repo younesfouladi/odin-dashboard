@@ -514,9 +514,11 @@ th {
 .recent-order-container table th {
   border-bottom: 1px solid var(--active-item-sidebar);
 }
+
 .recent-order-container {
   padding: 1rem;
   grid-column: 1 / -1;
+  overflow: auto;
 }
 
 .recent-order-container th,
