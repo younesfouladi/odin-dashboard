@@ -77,10 +77,17 @@ const sideBar = document.querySelector(".sidebar-container");
 const sidebarCloser = document.querySelector(".sidebar-closer");
 const sidebarOpener = document.querySelector(".sidebar-opener-button");
 
+// For below two functions i used timer & different codes to make the sidebar have ANIMATIONS on open/close
 sidebarOpener.addEventListener("click", () => {
   sideBar.style.display = "flex";
+  setTimeout(() => {
+    sideBar.classList.add("activate-sidebar");
+  }, 100);
 });
 
 sidebarCloser.addEventListener("click", () => {
-  sideBar.style.display = "none";
+  sideBar.classList.remove("activate-sidebar");
+  setTimeout(() => {
+    sideBar.style.display = "none";
+  }, 1000);
 });

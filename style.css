@@ -652,10 +652,19 @@ th {
   }
 
   .sidebar-container {
-    display: none;
+    visibility: hidden;
+    transform: translateX(-200%);
     position: absolute;
     left: 0;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
   }
+
+  .sidebar-container.activate-sidebar {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
   .sidebar-opener-button {
     display: flex;
   }
