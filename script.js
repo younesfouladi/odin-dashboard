@@ -82,12 +82,12 @@ sidebarOpener.addEventListener("click", () => {
   sideBar.style.display = "flex";
   setTimeout(() => {
     sideBar.classList.add("activate-sidebar");
-  }, 100);
+  }, 1);
 });
 
 sidebarCloser.addEventListener("click", () => {
   sideBar.classList.remove("activate-sidebar");
   setTimeout(() => {
     sideBar.style.display = "none";
-  }, 1000);
+  }, 500);
 });
